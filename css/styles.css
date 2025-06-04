@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@font-face {
+  font-family: 'Funky Coffee';
+  src: url('/fonts/Funky Coffee.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ================================================= */
+/* ==========  WAFFLES & FRIENDS CSS  ============== */
+/* ================================================= */
+
+/* 1. RESET & BASE STYLES
+   ---------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color Palette */
+  --color-sky: #B8E6FF;            /* Sky Blue */
+  --color-forest: #6B8E23;         /* Forest Green */
+  --color-gold: #FFD700;           /* Gold */
+  --color-orange: #FF8C00;         /* Playful Orange */
+  --color-accent: #ba3505;         /* Accent Brownish-Red */
+  --color-tan: #FFF8E1;            /* Meadow Tan */
+  --color-dark-brown: #4A403A;     /* Deep Brown */
+  --color-white: #FFF;             /* Pure White */
+  --color-shadow: rgba(0,0,0,0.10);/* Soft Shadow */
+
+  /* Font Family */
+  --font-main: 'Chewy', cursive, sans-serif;           /* Main Headers/Text */
+  --font-accent: 'Funky Coffee', cursive, sans-serif;  /* Subtitles/Accents */
+  --font-body: 'Karla', sans-serif;                    /* Body/Paragraphs */
+}
+
+/* Base body styles */
+body, p, li, .button {
+  font-family: var(--font-body);
+}
+h1, h2, h3, .hero-title, .main-nav a, .nav-link {
+  font-family: var(--font-header);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+.pt-2 { padding-top: 2rem; }
+.pb-2 { padding-bottom: 2rem; }
+
+
+/* ================================================= */
+/* ==============  HERO / WELCOME  ================= */
+/* ================================================= */
+
+.hero {
+  width: 100%;
+  min-height: 400px;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-tan));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Add more as you design the hero section! */
+}
+.hero-image {
+  width: 300px;
+  max-width: 80vw;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-family: var(--font-header);
+  font-size: 4rem;
+  color: var(--color-orange);
+  margin-bottom: 1rem;
+}
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  color: var(--color-forest);
+}
+
+/* ================================================= */
+/* ===============  NAVIGATION BAR  ================ */
+/* ================================================= */
+.main-nav {
+  width: 100%;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 0;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.main-nav li {}
+.main-nav a {
+  text-decoration: none;
+  font-family: var(--font-header);
+  font-size: 1.7rem;
+  color: #006400;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+.main-nav a:hover {
+  background: var(--color-tan);
+  color: var(--color-orange);
+  transform: scale(1.1);
+}
+
+/* ================================================= */
+/* =============  SECTION EXAMPLES  ================ */
+/* ================================================= */
+
+/* === CHARACTERS SECTION === */
+.characters-section {
+  padding: 3rem 1rem;
+  background: var(--color-tan);
+}
+.character-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  margin: 1rem;
+  padding: 2rem;
+  font-family: var(--font-header);
+}
+
+.character-card-title {
+  font-family: var(--font-header);
+}
+.character-card p, .character-card li {
+  font-family: var(--font-body);
+}
+
+/* === RESOURCES SECTION === */
+.resources-section {
+  background: linear-gradient(120deg, #fff8e1, #ffd700);
+  padding: 3rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+}
+
+/* === FOOTER === */
+footer {
+  background: #228b22;
+  padding: 1rem;
+  color: #ffd700;
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+/* ================================================= */
+/* ==========  RESPONSIVE DESIGN AREA  ============= */
+/* ================================================= */
+@media (max-width: 900px) {
+  .hero-title { font-size: 2.5rem; }
+  .main-nav a { font-size: 1.3rem; }
+  /* Adjust cards, layouts, etc. */
+}
+@media (max-width: 600px) {
+  .hero { min-height: 220px; }
+  .hero-title { font-size: 1.7rem; }
+  .main-nav ul { gap: 1rem; }
+  .character-card { padding: 1rem; }
+}
+
+/* ================================================= */
+/* ==============  END OF TEMPLATE  ================ */
+/* ================================================= */

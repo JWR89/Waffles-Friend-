@@ -53,10 +53,32 @@ h1, h2, h3, .hero-title, .main-nav a, .nav-link {
 .pt-2 { padding-top: 2rem; }
 .pb-2 { padding-bottom: 2rem; }
 
+/* ===== Animation Video & Skip Button Styles ===== */
+#mercy-meadows-animation {
+  position: relative; /* Needed for skip button positioning */
+}
 
-/* ================================================= */
-/* ==============  HERO / WELCOME  ================= */
-/* ================================================= */
+#skip-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 10000;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  background: #FFD700;
+  color: #4A403A;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  transition: background 0.2s;
+}
+#skip-btn:hover {
+  background: #FF8C00;
+  color: #fff;
+}
+
+
 
 .hero {
   width: 100%;
@@ -107,7 +129,7 @@ h1, h2, h3, .hero-title, .main-nav a, .nav-link {
   display: flex;
   gap: 2rem;
 }
-.main-nav li {}
+
 .main-nav a {
   text-decoration: none;
   font-family: var(--font-header);

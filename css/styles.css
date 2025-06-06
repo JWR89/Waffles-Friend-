@@ -571,7 +571,7 @@ footer {
 .hidden-fish {
   width: 200px;           /* <<-- Increased from default (try 84px, 96px, or more) */
   height: auto;  
-  opacity: 0.3;
+  opacity: 0.2;
   transition: opacity 0.18s, transform 0.18s;
   filter: drop-shadow(0 2px 10px #b8e6ff44);
 }

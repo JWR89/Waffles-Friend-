@@ -45,6 +45,7 @@ const bannerClose = document.getElementById('banner-close');
 
 fish.addEventListener('click', function() {
   fishBanner.style.display = 'flex';
+  launchConfetti();
 });
 
 bannerClose.addEventListener('click', function() {
@@ -54,3 +55,15 @@ bannerClose.addEventListener('click', function() {
 fishBanner.addEventListener('click', function(e) {
   if (e.target === fishBanner) fishBanner.style.display = 'none';
 });
+
+function launchConfetti() {
+  confetti({
+    particleCount: 180,
+    spread: 80,
+    origin: { y: 0.45 },
+    colors: ['#FFD700', '#FF8C00', '#39C5E0', '#A5D17A', '#FF69B4', '#ffffff'],
+    shapes: ['circle', 'square'],
+    gravity: 0.7,
+    scalar: 1.2,
+  });
+}

@@ -38,21 +38,16 @@
 <!-- Hero Section with Animation Placeholder -->
 <section id="hero" class="hero">
   <div id="mercy-meadows-animation">
- <video id="welcome-video" autoplay muted playsinline>
+ <video id="welcome-video" class="welcome-media" autoplay muted playsinline>
   <source src="/Assets/OpenVideo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<img id="welcome-logo" src="/Assets/Logos/openimage.png" alt="Waffles & Friends Logo" style="display: none; width: 300px; margin: 0 auto;" />
+<img id="welcome-logo" class="welcome-media" src="/Assets/OpeningImage.png" alt="welcome-logo" style="display: none;" />
   <button id="skip-btn">Skip Animation</button>
   </div>
-  <div class="hero-overlay">
-    <h1 class="hero-heading">Welcome to Mercy Meadows</h1>
-    <h2 class="hero-subheading">Where Adventure Leads to Wisdom</h2>
-  </div>
-</section>
 
 <!-- Navigation Bar -->
- <nav>
+<nav class="main-nav">
   <ul>
     <li><a href="/index.html">Home</a></li>
     <li><a href="/about.html">About</a></li>
@@ -64,12 +59,58 @@
   </ul>
 </nav>
 
+  <div class="hero-overlay">
+    <h1 class="hero-heading">Welcome to Mercy Meadows</h1>
+    <h2 class="hero-subheading">Where Adventure Leads to Wisdom</h2>
+  </div>
+</section>
 
+<section class="scroll-section">
+  <img src="/Assets/side-art-left.png" alt="storybook tree" class="side-art left">
+  <div class="scroll-paper">
+    <h2 class="scroll-title">He Walks With Me Here</h2>
+    <div class="scroll-poem">
+      <p>“Come rest,” says the Grove where the lanterns glow bright,<br>
+      “There’s peace in the stillness and joy in the light.”<br>
+      As I sit in the hush with the breeze in my ear,<br>
+      I smile and remember… He walks with me here.</p>
 
+      <p>“Come pray,” hums the Tree with its bark carved in grace,<br>
+      “Leave every worry in this sacred place.”<br>
+      I whisper my hopes, my hurts disappear—<br>
+      And deep in my spirit… He walks with me here.</p>
 
+      <p>“Come hear,” says the Chapel where scripture is strong,<br>
+      “Declare what is right, and stand against wrong.”<br>
+      The truth makes me brave, I feel no fear—<br>
+      Because I know this… He walks with me here.</p>
 
+      <p>“Come be changed,” breathes the Meadow as dusk fills the sky,<br>
+      His love gently shaping the tears that I cry.<br>
+      Tomorrow may wait, for His mercy is near—<br>
+      My story finds hope… for He walks with me here.</p>
+    </div>
+  </div>
+  <img src="/Assets/side-art-right.png" alt="storybook flower" class="side-art right">
+</section>
 
-
+<footer class="site-footer">
+  <div class="footer-row">
+    <div class="footer-social">
+      <a href="https://tiktok.com/@wafflesandfriends" target="_blank" class="footer-icon" title="TikTok">
+        <img src="/Assets/tiktok-icon.png" alt="TikTok" />
+      </a>
+      <a href="https://facebook.com/wafflesandfriends" target="_blank" class="footer-icon" title="Facebook">
+        <img src="/Assets/facebook-icon.png" alt="Facebook" />
+      </a>
+      <!-- Add more social links if you have them -->
+    </div>
+    <div class="footer-text">
+      <span>© 2025 Waffles & Friends. All rights reserved.</span>
+      <span class="footer-tagline">Fun. Faith. Friendship. <br> <span class="footer-tagline-accent"> Always Jesus.</span>
+    </div>
+  </div>
+</footer>
 
   <script src="/js/script.js" defer></script>
 </body>

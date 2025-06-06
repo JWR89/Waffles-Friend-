@@ -46,6 +46,15 @@ h1, h2, h3, .hero-title, .main-nav a, .nav-link {
   font-family: var(--font-header);
 }
 
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #B8E6FF 0%,
+    #A5D17A 100%
+  );
+}
+
 /* Utility Classes */
 .text-center { text-align: center; }
 .mt-2 { margin-top: 2rem; }
@@ -55,7 +64,21 @@ h1, h2, h3, .hero-title, .main-nav a, .nav-link {
 
 /* ===== Animation Video & Skip Button Styles ===== */
 #mercy-meadows-animation {
-  position: relative; /* Needed for skip button positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  max-width: 1000px;
+  aspect-ratio: 16 / 9;
+  margin: 3rem auto 2rem auto;
+  border-radius: 2.5rem;
+  box-shadow: 0 8px 80px rgba(255, 225, 1, 0.16);
+  /* No background here! */
+  background: transparent;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
 }
 
 #skip-btn {
@@ -78,18 +101,33 @@ h1, h2, h3, .hero-title, .main-nav a, .nav-link {
   color: #fff;
 }
 
+/* ===== Opening Animation Video & Logo ===== */
+.welcome-media {
+  width: 100%;
+  height: auto;
+  border-radius: 2.5rem;
+  box-shadow: 0 4px 30px rgba(250, 221, 2, 0.23);
+  background: transparent;
+  display: block;
+  object-fit: cover;
+}
 
-
+.welcome-media, #mercy-meadows-animation {
+  box-shadow:
+    0 8px 40px 0 rgba(80,140,30, 0.21),     /* Stronger green shadow */
+    0 0 44px 12px #06778ebb;                /* Soft golden glow */
+}
 .hero {
   width: 100%;
   min-height: 400px;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-tan));
+  background: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   /* Add more as you design the hero section! */
 }
+
 .hero-image {
   width: 300px;
   max-width: 80vw;
@@ -97,56 +135,205 @@ h1, h2, h3, .hero-title, .main-nav a, .nav-link {
   box-shadow: 0 6px 20px rgba(0,0,0,0.18);
   margin-bottom: 1.5rem;
 }
-.hero-title {
-  font-family: var(--font-header);
-  font-size: 4rem;
-  color: var(--color-orange);
-  margin-bottom: 1rem;
+.hero-title, .hero-heading {
+  font-family: 'Chewy', cursive;
+  font-size: 3.3rem;
+  color: #4A403A;
+  text-align: center;
+  margin: 2.1rem 0 0.8rem 0;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 18px #fff8e144;
 }
-.hero-tagline {
-  font-family: var(--font-body);
-  font-size: 2rem;
-  color: var(--color-forest);
+
+.hero-tagline, .hero-subheading {
+  font-family: 'Karla', sans-serif;
+  font-size: 1.5rem;
+  color: #6B8E23;
+  text-align: center;
+  margin-bottom: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 /* ================================================= */
 /* ===============  NAVIGATION BAR  ================ */
 /* ================================================= */
-.main-nav {
-  width: 100%;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-orange));
+nav {
+  width: 100vw;
+  background: linear-gradient(90deg, #FFD700 0%, #FF8C00 100%);
+  box-shadow: 0px 4px 18px rgba(255, 140, 0, 0.10);
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1.2rem 0;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
-  position: sticky;
-  top: 0;
+  margin: 0 auto 0 auto;
+  position: relative;
   z-index: 1000;
-}
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  overflow-x: auto;
 }
 
-.main-nav a {
-  text-decoration: none;
-  font-family: var(--font-header);
-  font-size: 1.7rem;
-  color: #006400;
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  transition: background 0.3s, color 0.3s, transform 0.3s;
+nav ul {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.main-nav a:hover {
-  background: var(--color-tan);
-  color: var(--color-orange);
-  transform: scale(1.1);
+
+nav li {
+  display: flex;
+}
+
+nav a {
+  display: block;
+  font-family: 'Chewy', cursive;
+  font-size: 1.18rem;
+  color: black;
+  background: rgba(255,255,255,0.19);
+  border-radius: 100px;
+  padding: 0.63rem 1.5rem;
+  margin: 0 0.1rem;
+  box-shadow: 0 4px 16px rgba(255, 140, 0, 0.18), 0 1px 7px rgba(0,0,0,0.08);
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: 2px solid #FFD700;    /* <-- Soft yellow border */
+  transition:
+    background 0.17s,
+    color 0.17s,
+    border-color 0.18s,
+    transform 0.12s cubic-bezier(.34,1.56,.64,1),
+    box-shadow 0.17s;
+    position: relative;   /* Needed for the sparkle */
+  overflow: hidden;     /* Hide overflow for sparkles */
+}
+
+nav a:hover {
+  background: #317902;
+  color: #ffffff;
+  border-color: #fff8e1;     /* Softer, creamy yellow on hover */
+  transform: scale(1.13) translateY(-3px);
+  box-shadow: 0 8px 36px rgba(255, 140, 0, 0.27), 0 2px 18px rgba(0,0,0,0.13);
+  animation: bounce-nav 0.33s cubic-bezier(.34,1.56,.64,1) 1;
+}
+
+@keyframes bounce-nav {
+  0%   { transform: scale(1.0) translateY(0);}
+  30%  { transform: scale(1.08, 0.95) translateY(-4px);}
+  55%  { transform: scale(0.96, 1.09) translateY(-2px);}
+  70%  { transform: scale(1.04, 0.98) translateY(-1px);}
+  85%  { transform: scale(1.01, 1.01) translateY(-3px);}
+  100% { transform: scale(1.13) translateY(-3px);}
 }
 
 /* ================================================= */
-/* =============  SECTION EXAMPLES  ================ */
+/* =============  SECTIONs  ======================== */
+/* ================================================= */
+
+/* ================================================= */
+/* =============  Poem  ======================== */
+/* ================================================= */
+
+/* === SCROLL SECTION SIDE ART === */
+.scroll-section {
+  position: relative;  /* <-- add this if not already there */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2.7rem auto 3.2rem auto;
+  width: 100vw;
+}
+
+.side-art {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.39;
+  z-index: 1;
+  pointer-events: none;
+  max-height: 60vh;
+  width: auto;
+  transition: opacity 0.3s;
+}
+.side-art.left  { left: 0; }
+.side-art.right { right: 0; }
+
+@media (max-width: 900px) {
+  .side-art { display: none; }
+  .scroll-paper { width: 98vw; }
+}
+
+.scroll-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2.7rem auto 3.2rem auto;
+  width: 100vw;
+  position: relative;
+}
+
+.scroll-paper {
+  width: 60vw;                 /* Fill almost the whole viewport */
+  max-width: 1700px;           /* Let it go really wide! */
+  min-width: 310px;
+  padding: 3.2rem 2.7rem 3.2rem 2.7rem;
+  margin: 0 auto;
+  background: #FFF8E1 url('/assets/parchment-tile.png') repeat;
+  border-radius: 54px 48px 54px 48px / 42px 52px 39px 47px;
+  box-shadow: 0 10px 44px 0 rgba(190,160,60,0.13), 0 2px 12px #ba350516;
+  border: 3px solid #6c3f00;
+  position: relative;
+  font-family: var(--font-body);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.scroll-paper::before, .scroll-paper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle at 40% 55%, #FFE87C 38%, #FFD700 85%, #FFF8E1 100%);
+  border-radius: 50%;
+  filter: blur(4.7px);
+  opacity: 0.22;
+  z-index: 1;
+}
+.scroll-paper::before {
+  top: -18px;
+  left: -22px;
+}
+.scroll-paper::after {
+  bottom: -22px;
+  right: -19px;
+}
+
+.scroll-title {
+  font-family: 'Funky Coffee', cursive;
+  font-size: 2.5rem;
+  color: #ba3505;
+  margin-bottom: 1.1rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
+}
+
+.scroll-poem p {
+  font-family: var(--font-body);
+  color: #000000;
+  font-size: 1.25rem;
+  line-height: 2.2;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background: transparent;
+}
+
+/* ================================================= */
+/* =============  End Poem  ======================== */
 /* ================================================= */
 
 /* === CHARACTERS SECTION === */
@@ -186,6 +373,86 @@ footer {
   text-align: center;
   font-family: var(--font-body);
 }
+
+/* ================================================= */
+/* ==========  F O O T E R  ============= */
+/* ================================================= */
+
+.site-footer {
+  width: 100vw;
+  background: linear-gradient(90deg, #FFD700 0%, #FF8C00 100%);
+  color: #4A403A;
+  padding: 1.7rem 0 1rem 0;
+  text-align: center;
+  font-family: 'Chewy', cursive;
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
+  box-shadow: 0 -4px 18px rgba(255, 140, 0, 0.10);
+  margin-top: 4.3rem;
+  z-index: 1200;
+  position: relative;
+}
+
+.footer-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 2.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-icon img {
+  background: transparent !important;   /* Ensures no unwanted color */
+  border-radius: 50%;                   /* Perfectly round */
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.09);
+  transition: transform 0.18s;
+}
+
+.footer-icon img:hover {
+  transform: scale(1.08) rotate(-5deg);
+  box-shadow: 0 6px 20px #ffc6282e;
+}
+
+.footer-text {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-tagline {
+  font-family: 'Funky Coffee', cursive;
+  color: #ba3505;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+
+.footer-tagline-accent {
+  color: #ba3505;
+   font-family: 'Funky Coffee', cursive;
+   font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .footer-text {
+    font-size: 1rem;
+  }
+  .footer-tagline {
+    font-size: 0.98rem;
+  }
+}
+
 
 /* ================================================= */
 /* ==========  RESPONSIVE DESIGN AREA  ============= */

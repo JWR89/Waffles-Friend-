@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (keep if you want tracking) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SSKFNDCF2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9SSKFNDCF2');
+  </script>
+
+  <meta name="p:domain_verify" content="b2ef84a60a4be38138cf48458371ffd1"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="https://waffles-and-friends.com/Assets/map.svg" />
+  <title>Adventures | Waffles & Friends</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/books.html">Adventures</a></li>
+      <li><a href="/characters.html">Friends</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="https://waffleandfriends.gumroad.com" target="_blank">Shop</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-about-contact section">
+    <div class="hero-text-contact">
+      <h1>Contact Us</h1>
+      <div id="rotating-poem" class="storybook-verse-parchment" style="margin-top: 1.5rem;">
+        <!-- Poem will load here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/manjqlne"
+  method="POST"
+  style="
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.5rem;
+        background: darkgreen;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: 'Karla', sans-serif;
+      ">
+      <label for="email" aria-label="Enter your email" 
+        style="
+          display: block;
+          font-size: 1.3rem;
+          margin-bottom: 0.5rem;
+          color: #fff;
+        ">Your Email:</label>
+      <input id="email" name="email" type="email" aria-required="true" placeholder="waffles@acorns.net" required 
+        style="
+          width: 100%;
+          padding: 0.8rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1rem;
+        ">
+      
+      <label for="message" aria-label="Write your message here" 
+        style="
+          display: block;
+          font-size: 1.3rem;
+          margin-bottom: 0.5rem;
+          color: #fff;
+        ">Your Message:</label>
+      <textarea id="message" name="message" aria-required="true" placeholder="Write a message, have some fun—Waffles and friends read every one!"
+        required 
+        style="
+          width: 100%;
+          padding: 0.8rem;
+          margin-bottom: 1rem;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 1rem;
+          resize: vertical;
+          min-height: 150px;
+        "></textarea>
+      
+      <button id="my-form-button" 
+        style="
+          display: block;
+          width: 100%;
+          padding: 0.8rem;
+          background-color: #FF8C00;
+          color: white;
+          font-size: 1.5rem;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.3s;
+        ">Submit</button>
+      
+      <p id="my-form-status" 
+        style="
+          margin-top: 1rem;
+          font-size: 1rem;
+          color: #007BFF;
+          text-align: center;
+        "></p>
+    </form>
+</form>
+
+    <!-- Hidden Jesus Fish (Fun Hunt!) -->
+  <img 
+    src="/Assets/JesusFish.svg" 
+    alt="Hidden Jesus Fish" 
+    class="hidden-fish" 
+    id="hiddenFish"
+    style="position: absolute; cursor: pointer; z-index: 4000;"
+  />
+
+  <!-- Pop-Up Banner for Hidden Fish -->
+  <div id="fish-banner" class="storybook-banner">
+    <div class="banner-inner">
+      <span id="banner-close" class="banner-close" title="Close">&times;</span>
+        <div class="banner-visual">
+        <img src="/Assets/Map.svg" alt="Magnified Map Section" class="banner-map-illustration" />
+      </div>
+      <div class="banner-header">You found the hidden Jesus Fish!</div>
+      <div class="banner-text">
+        <span class="banner-verse">“Seek and you will find...”<br><em>(Matthew 7:7)</em></span>
+        <br>
+        <span class="banner-fun">You’re a true Mercy Meadows Explorer!<br>
+        <span style="color:#ba3505;">Come back soon for a new surprise!</span></span>
+      </div>
+    <button id="share-fish-btn" class="storybook-share-btn">
+    <img src="/Assets/Map.svg" alt="Treasure Map" style="width:32px; height:32px; margin-right:0.6em; vertical-align:middle;">
+    Share: I Found the Hidden Jesus Fish!
+    </button>
+    <button id="copy-fish-share" class="storybook-share-btn" style="margin-top:0.7em; background: #FFD700;">
+      Copy & Share Anywhere!
+    </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-row">
+      <div class="footer-text">
+        <span class="footer-tagline-accent-one">Let’s Stay Friends!!</span>
+      </div>
+      <div style="margin: 1rem 0;">
+        <a href="/subscribe.html" class="footer-subscribe-link">Subscribe for updates</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@elias.waffles.friends" target="_blank" class="footer-icon" title="TikTok">
+          <img src="/Assets/tiktok-icon.png" alt="TikTok" />
+        </a>
+        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61568196914471" target="_blank" class="footer-icon" title="Facebook">
+          <img src="/Assets/facebook-icon.png" alt="Facebook" />
+        </a>
+      </div>
+      <div class="footer-text">
+        <span>© 2025 Waffles & Friends. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Confetti & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="/js/script.js" defer></script>
+<script>
+  const poems = [
+    `<p><strong>Have something to say? We’d love to hear!</strong><br>
+    Send your words with a giggle and cheer!<br>
+    Whether it’s “hi!” or a question or two,<br>
+    We’re wagging our tails to hear from you!<br>
+    Fill out the form, it’s simple and fun—<br>
+    Your note might be read by <em>everyone</em>! 🐾✨</p>`,
+
+    `<p><strong>Write us a letter, short or long,</strong><br>
+    A question, a story, or even a song!<br>
+    We’ll read it with joy and wagging delight—<br>
+    Your message Will make our day bright!<br>
+    So type up your thoughts, don’t delay—<br>
+    Waffles & friends are just a click away! 📬🌈</p>`,
+
+    `<p><strong>Do you have a thought, a prayer, or a cheer?</strong><br>
+    We’re listening closely—<br>your heart’s welcome here.<br>
+    Every word matters, every note shared,<br>
+    'Cause in Mercy Meadows, we always care!<br>
+    Just fill in the form, and don’t be shy—<br>
+    We’re just on the other end, saying hi! 🙏💛</p>`,
+
+    `<p><strong>Hey there, friend! Got something to say?</strong><br>
+    A question? A riddle? A joke of the day?!<br>
+    We read every message that comes our way,<br>
+    So go ahead—send it without delay!<br>
+    Your words are a gift, a joy, a surprise—<br>
+    They light up our hearts like fireflies! ✍️🔥</p>`
+  ];
+
+  const poemContainer = document.getElementById('rotating-poem');
+  const randomIndex = Math.floor(Math.random() * poems.length);
+  poemContainer.innerHTML = poems[randomIndex];
+</script>
+</body>
+</html>

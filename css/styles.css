@@ -32,39 +32,45 @@
 :root {
   /* Color Palette */
   --color-sky: #B8E6FF;
-  /* Sky Blue */
   --color-forest: #6B8E23;
-  /* Forest Green */
   --color-gold: #FFD700;
-  /* Gold */
   --color-orange: #FF8C00;
-  /* Playful Orange */
   --color-accent: #ba3505;
-  /* Accent Brownish-Red */
   --color-tan: #FFF8E1;
-  /* Meadow Tan */
   --color-dark-brown: #4A403A;
-  /* Deep Brown */
   --color-white: #FFF;
-  /* Pure White */
   --color-shadow: rgba(0, 0, 0, 0.10);
-  /* Soft Shadow */
 
   /* Font Family */
   --font-main: 'Chewy', cursive, sans-serif;
-  /* Main Headers/Text */
   --font-accent: 'Funky Coffee', cursive, sans-serif;
-  /* Subtitles/Accents */
   --font-body: 'Karla', sans-serif;
-  /* Body/Paragraphs */
 
-    --font-size-h1: 2.4rem;
+  --font-size-h1: 2.8rem;
   --font-size-h2: 2rem;
   --font-size-h3: 1.6rem;
   --font-size-subheading: 1.4rem;
   --font-size-p: 1.2rem;
   --font-size-secondary: 1.1rem;
   --font-size-callout: 1.3rem;
+  --font-size-body-lg: 1.5rem;
+
+  --parchment-bg: #FFF8E1;
+  --primary-dark: #3a3a3a;
+  --primary-green: #2f5d3f;
+  --accent-orange: #FF8C00;
+  --highlight-blue: #007BFF;
+  --white: #ffffff;
+  --font-h1: 2.5rem;
+  --font-heading: 'Chewy', cursive;
+
+  /* Jesus Page Section Variables */
+  --deep-red: #8B1E3F;
+  --accent-gold: #FFD700;
+  --parchment-bg: #FFF8E1;
+  --dark-text: #333;
+  --body-font: 'Karla', sans-serif;
+  --font-md: 1.2rem;
 }
 
 /* Base body styles */
@@ -196,8 +202,8 @@ body {
 .hero-title,
 .hero-heading {
   font-family: 'Chewy', cursive;
-  font-size: 3.3rem;
-  color: #4A403A;
+  font-size: 4rem;
+  color: #ef6109;
   text-align: center;
   margin: 2.1rem 0 0.8rem 0;
   letter-spacing: 1px;
@@ -358,7 +364,7 @@ nav a:hover {
   justify-content: center;
   align-items: flex-start;
   margin: 2.7rem auto 3.2rem auto;
-  width: 100vw;
+  width: 50vw;
   position: relative;
 }
 
@@ -368,10 +374,10 @@ nav a:hover {
   max-width: 1700px;
   /* Let it go really wide! */
   min-width: 310px;
-  padding: 3.2rem 2.7rem 3.2rem 2.7rem;
   margin: 0 auto;
-  background: #FFF8E1 url('/assets/parchment-tile.png') repeat;
-  border-radius: 54px 48px 54px 48px / 42px 52px 39px 47px;
+  background-color: var(--parchment-bg);
+  padding: 2rem;
+  border-radius: 15px;
   box-shadow: 0 10px 44px 0 rgba(190, 160, 60, 0.13), 0 2px 12px #ba350516;
   border: 3px solid #6c3f00;
   position: relative;
@@ -744,7 +750,7 @@ footer {
 
 .scroll-title {
   font-family: 'Chewy', cursive;
-  font-size: 4rem;
+  font-size: 3rem;
   color: #ba3505;
   margin-bottom: 1.2rem;
   text-align: center;
@@ -1259,4 +1265,159 @@ h2 {
 /* =============================================== */
 .story-description {
   font-size: 1.4rem;
+}
+/* ================================================= */
+/* ==========  CONTACT FORM SECTION  ================ */
+/* ================================================= */
+
+/* Contact Form Section */
+.hero-about-contact.section {
+  background-color: transparent;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero-about-contact h1 {
+  font-size: 3.5rem !important;
+  color: var(--color-orange);
+  font-family: var(--font-main);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-text-contact p {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-dark-brown);
+  background-color: var(--parchment-bg);
+  padding: 1.7rem 2rem;
+  border-radius: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  border: 3px dashed var(--accent-orange);
+}
+
+.hero-text-contact h1 {
+  color: var(--accent-orange);
+  font-size: var(--heading-1);
+  text-align: center;
+}
+
+form#my-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--primary-green);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-family: var(--font-body);
+}
+
+form#my-form label {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+  text-align: left;
+}
+
+form#my-form input,
+form#my-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+form#my-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+form#my-form button {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--accent-orange);
+  color: var(--white);
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form#my-form button:hover {
+  background-color: #e67600;
+  transform: scale(1.03);
+}
+
+#my-form-status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--highlight-blue);
+  text-align: center;
+}
+
+/* ================================================= */
+/* ==========  ACCEPT JESUS SECTION STYLES  ========= */
+/* ================================================= */
+.accept-jesus {
+  background-color: var(--parchment-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 3px dashed red;
+  font-family: 'Chewy', cursive;
+}
+
+.accept-jesus h2,
+.accept-jesus h1,
+.accept-jesus-heading {
+  font-family: 'Chewy', cursive;
+  color: #af0303;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.accept-jesus p {
+  font-size: 2rem;
+  line-height: 1.75;
+  font-family: 'Chewy', cursive;
+  color: #3d0401; /* warm chocolate brown that pops */
+}
+
+.accept-jesus .prayer-text,
+.accept-jesus p.prayer-text {
+  font-size: 2rem;
+  line-height: 1.75;
+  font-family: 'Chewy', cursive;
+  color: #eb1207; /* warm chocolate brown that pops */
+}
+
+.accept-jesus button,
+.accept-jesus .storybook-celebrate-btn{ 
+ background-color: #124201;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Chewy', cursive;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.accept-jesus button,
+.accept-jesus .storybook-celebrate-btn:hover {
+  transform: scale(1.1); /* Bounce effect */
+  background-color: var(--color-gold); /* Comet’s deep red */
+  color: var(--color-accent);
 }

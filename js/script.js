@@ -86,7 +86,6 @@ document.getElementById('copy-fish-share').addEventListener('click', function() 
   });
 });
 
-// Automatically highlight and link the word "Jesus" throughout the page content
 document.addEventListener("DOMContentLoaded", () => {
   if (window.location.pathname.includes("about-jesus.html")) return;
 
@@ -94,18 +93,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const replacementHTML = `<a href="/about-jesus.html" class="highlight-jesus">Jesus</a>`;
 
   const walk = (node) => {
-    if (node.nodeType === 3) { // Text node
+    if (
+      node.nodeType === 3 &&
+      node.parentNode &&
+      !["A", "TEXTAREA", "INPUT", "SCRIPT", "STYLE"].includes(node.parentNode.tagName)
+    ) {
       const text = node.nodeValue;
-      const idx = text.indexOf(targetText);
-      if (idx > -1) {
+      const regex = new RegExp(`\\b${targetText}\\b`, "g");
+      if (regex.test(text)) {
         const span = document.createElement("span");
-        span.innerHTML = text.replace(
-          new RegExp(`\\b${targetText}\\b`, "g"),
-          replacementHTML
-        );
+        span.innerHTML = text.replace(regex, replacementHTML);
         node.parentNode.replaceChild(span, node);
       }
-    } else if (node.nodeType === 1 && node.childNodes && !["SCRIPT", "STYLE", "A"].includes(node.tagName)) {
+    } else if (node.nodeType === 1 && node.childNodes) {
       for (let i = 0; i < node.childNodes.length; i++) {
         walk(node.childNodes[i]);
       }
@@ -114,3 +114,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   walk(document.body);
 });
+

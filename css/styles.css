@@ -1,11 +1,3 @@
-/* =============================================== */
-/* ==========  MORE ADVENTURES HEADER  =========== */
-/* =============================================== */
-.more-adventures-header {
-  color: #f7931e; /* your theme orange */
-  font-size: 2rem; /* slightly smaller */
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
 @font-face {
@@ -74,6 +66,9 @@
   --dark-text: #333;
   --body-font: 'Karla', sans-serif;
   --font-md: 1.2rem;
+  --main-brown: #4A403A;
+  --font-sm: 1.15rem;
+  --font-size-sm: 1.15rem;
 }
 
 /* Base body styles */
@@ -241,10 +236,13 @@ nav {
   border-bottom-left-radius: 36px;
   border-bottom-right-radius: 36px;
   overflow-x: auto;
- box-shadow:
-    0 10px 22px -8px #317902cc,  /* Soft green shadow below */
-    0 -8px 22px -10px #31790299, /* Soft green shadow above */
-    0 4px 18px rgba(255, 140, 0, 0.10); /* existing soft shadow */
+  box-shadow:
+    0 10px 22px -8px #317902cc,
+    /* Soft green shadow below */
+    0 -8px 22px -10px #31790299,
+    /* Soft green shadow above */
+    0 4px 18px rgba(255, 140, 0, 0.10);
+  /* existing soft shadow */
 }
 
 nav ul {
@@ -435,14 +433,96 @@ nav a:hover {
   background: var(--color-tan);
 }
 
+/* === CHARACTER CARD FLIP STYLES === */
+/* Character Card Styles - Updated for improved flip, fill, and overlay */
 .character-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-  margin: 1rem;
-  padding: 2rem;
-  font-family: var(--font-header);
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  perspective: 1000px;
 }
+
+.character-card * {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Card Inner - flip and scale on hover */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease, scale 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.character-card:hover .card-inner {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* Card front/back fill entire card and improved image fit */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--parchment-bg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-front img,
+.card-back {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* Prevent flip and apply grayed out style */
+.card-inner.no-flip {
+  transform: none !important;
+}
+
+/* Coming Soon Card Overlay Styles (moved from HTML <style> block) */
+.coming-soon .card-inner {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  border: 2px dashed var(--accent-color);
+}
+
+.coming-soon .card-front img {
+  filter: grayscale(100%) brightness(30%);
+}
+
+.card-back p {
+  font-size: 1.1rem;
+  padding: 1rem;
+  font-family: var(--fun-font);
+  color: #fff;
+  background-color: #8B4513;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* Remove redundant background/padding/margin from .character-card (handled above) */
 
 .character-card-title {
   font-family: var(--font-header);
@@ -487,9 +567,11 @@ footer {
   margin-top: 4.3rem;
   z-index: 1200;
   position: relative;
-   box-shadow:
-    0 -12px 32px -5px #317902cc,  /* Soft green shadow above */
-    0 2px 14px #14680233;         /* Subtle extra glow below */
+  box-shadow:
+    0 -12px 32px -5px #317902cc,
+    /* Soft green shadow above */
+    0 2px 14px #14680233;
+  /* Subtle extra glow below */
 }
 
 .footer-row {
@@ -576,8 +658,9 @@ footer {
 /* ================================================= */
 
 .hidden-fish {
-  width: 200px;           /* <<-- Increased from default (try 84px, 96px, or more) */
-  height: auto;  
+  width: 200px;
+  /* <<-- Increased from default (try 84px, 96px, or more) */
+  height: auto;
   opacity: 0.2;
   transition: opacity 0.18s, transform 0.18s;
   filter: drop-shadow(0 2px 10px #b8e6ff44);
@@ -586,27 +669,33 @@ footer {
 .hidden-fish:hover {
   opacity: 1;
   transform: scale(1.22) rotate(-10deg);
-       filter:
-    drop-shadow(0 0 0px #FFF)
-    drop-shadow(0 0 2px #FFD700)
-    drop-shadow(0 0 4px #FFD700)
-    drop-shadow(0 4px 3px #FFCE19);
+  filter:
+    drop-shadow(0 0 0px #FFF) drop-shadow(0 0 2px #FFD700) drop-shadow(0 0 4px #FFD700) drop-shadow(0 4px 3px #FFCE19);
 }
 
 .storybook-banner {
   display: none;
   position: fixed;
   z-index: 9002;
-  left: 0; top: 0; right: 0; bottom: 0;
-  background: rgba(184, 230, 255, 0.33); /* Soft blue overlay */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(184, 230, 255, 0.33);
+  /* Soft blue overlay */
   justify-content: center;
   align-items: center;
   animation: fadeInPopup 0.3s;
 }
 
 @keyframes fadeInPopup {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .banner-inner {
@@ -656,8 +745,10 @@ footer {
 
 .banner-close {
   position: absolute;
-  top: -28px;         /* Move higher outside the content area */
-  right: -18px;       /* Move more right outside the content area */
+  top: -28px;
+  /* Move higher outside the content area */
+  right: -18px;
+  /* Move more right outside the content area */
   font-size: 2.7rem;
   color: #FFD700;
   background: linear-gradient(145deg, #ba3505 60%, #ff8c00 100%);
@@ -677,7 +768,8 @@ footer {
     background 0.18s,
     box-shadow 0.17s,
     transform 0.17s;
-  z-index: 11000;    /* Keep on top */
+  z-index: 11000;
+  /* Keep on top */
   line-height: 1.0;
   display: flex;
   align-items: center;
@@ -725,6 +817,7 @@ footer {
   letter-spacing: 1px;
   transition: background 0.15s, color 0.15s, transform 0.13s;
 }
+
 .storybook-share-btn:hover {
   background: #FF8C00;
   color: #fff;
@@ -760,6 +853,7 @@ footer {
   letter-spacing: 1.5px;
   text-decoration: underline;
 }
+
 .about-intro {
   color: var(--color-sky);
   font-size: 1.28rem;
@@ -894,6 +988,7 @@ footer {
   color: var(--color-dark-brown);
   line-height: 1.8;
 }
+
 .scroll-vine-divider {
   width: 320px;
   max-width: 90%;
@@ -902,6 +997,7 @@ footer {
   display: block;
   opacity: 0.85;
 }
+
 .highlight-jesus {
   color: #ba3505;
   font-weight: bold;
@@ -934,7 +1030,7 @@ footer {
   max-width: 800px;
   margin: 0 auto 3rem auto;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .intro-scroll,
@@ -947,14 +1043,16 @@ footer {
 
 .jesus-story,
 .get-to-know {
-  background-color: #fbe8d0; /* muted peach sand */
+  background-color: #fbe8d0;
+  /* muted peach sand */
   border: 4px dashed #cc0000;
   padding: 60px 20px;
   border-radius: 15px;
 }
 
 .verse-callout {
-  background: transparent; /* no background behind verse */
+  background: transparent;
+  /* no background behind verse */
 }
 
 
@@ -969,6 +1067,7 @@ footer {
   margin: 1.5rem auto;
   max-width: 900px;
 }
+
 /* Section spacing utility */
 .section-spacing {
   padding: 2rem;
@@ -984,7 +1083,7 @@ h2 {
   font-family: 'Chewy', cursive;
   color: #af0303;
   margin-bottom: 20px;
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
 }
 
@@ -1002,6 +1101,7 @@ h2 {
   border: 2px dashed #c29863;
   border-radius: 12px;
 }
+
 .intro-scroll p,
 .jesus-love p,
 .jesus-story p,
@@ -1009,8 +1109,10 @@ h2 {
   font-size: 2rem;
   line-height: 1.75;
   font-family: 'Chewy', cursive;
-  color: #3d0401; /* warm chocolate brown that pops */
+  color: #3d0401;
+  /* warm chocolate brown that pops */
 }
+
 /* Adventures Hero Section */
 .adventures-hero {
   background-color: #f4ecd8;
@@ -1124,13 +1226,16 @@ h2 {
 .centered-heading {
   text-align: center;
   font-size: 3.5rem;
-  color: #FF8C00; /* Project orange theme color */
+  color: #FF8C00;
+  /* Project orange theme color */
 }
+
 .centered-subheading {
   text-align: center;
   color: #543b29;
   font-size: 1.8rem;
 }
+
 .scroll-vine-divider {
   display: block;
   margin: 2rem auto;
@@ -1185,6 +1290,7 @@ h2 {
   height: 24px;
   width: auto;
 }
+
 .carousel-section {
   display: flex;
   overflow-x: auto;
@@ -1206,6 +1312,7 @@ h2 {
   flex: 0 0 auto;
   width: 200px;
 }
+
 /* Center and style "What Makes These Adventures So Special" section */
 .why-these-books h2 {
   text-align: center;
@@ -1220,14 +1327,18 @@ h2 {
   text-align: center;
   font-family: 'Karla', sans-serif;
 }
+
 /* =============================================== */
 /* ==========  LATEST STORY HIGHLIGHT  =========== */
 /* =============================================== */
 .latest-story-highlight {
-  background-color: #b22222; /* Comet's deep red */
-  border: 2px solid #ffd700; /* gold border */
+  background-color: #b22222;
+  /* Comet's deep red */
+  border: 2px solid #ffd700;
+  /* gold border */
   color: white;
-  font-family: 'Chewy', cursive; /* more readable and on-brand */
+  font-family: 'Chewy', cursive;
+  /* more readable and on-brand */
   padding: 1rem 2rem;
   border-radius: 15px;
   text-align: center;
@@ -1241,12 +1352,14 @@ h2 {
 
 /* ===== Custom additions for More Adventures and Storybook Button ===== */
 .centered-heading.more-adventures {
-  color: #f7941d; /* Your signature orange */
+  color: #f7941d;
+  /* Your signature orange */
   font-size: 3rem;
 }
 
 .storybook-btn {
-  background-color: var(--color-forest); /* Comet’s deep red */
+  background-color: var(--color-forest);
+  /* Comet’s deep red */
   font-family: 'Chewy', cursive;
   font-size: 2rem;
   padding: 0.75rem 2rem;
@@ -1259,16 +1372,20 @@ h2 {
 }
 
 .storybook-btn:hover {
-  transform: scale(1.1); /* Bounce effect */
-  background-color: var(--color-gold); /* Comet’s deep red */
+  transform: scale(1.1);
+  /* Bounce effect */
+  background-color: var(--color-gold);
+  /* Comet’s deep red */
   color: var(--color-forest);
 }
+
 /* =============================================== */
 /* ==========  STORY DESCRIPTION STYLE ============ */
 /* =============================================== */
 .story-description {
   font-size: 1.4rem;
 }
+
 /* ================================================= */
 /* ==========  CONTACT FORM SECTION  ================ */
 /* ================================================= */
@@ -1296,7 +1413,7 @@ h2 {
   border-radius: 18px;
   max-width: 600px;
   margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   text-align: center;
   border: 3px dashed var(--accent-orange);
 }
@@ -1393,7 +1510,8 @@ form#my-form button:hover {
   font-size: 2rem;
   line-height: 1.75;
   font-family: 'Chewy', cursive;
-  color: #3d0401; /* warm chocolate brown that pops */
+  color: #3d0401;
+  /* warm chocolate brown that pops */
 }
 
 .accept-jesus .prayer-text,
@@ -1401,12 +1519,13 @@ form#my-form button:hover {
   font-size: 2rem;
   line-height: 1.75;
   font-family: 'Chewy', cursive;
-  color: #eb1207; /* warm chocolate brown that pops */
+  color: #eb1207;
+  /* warm chocolate brown that pops */
 }
 
 .accept-jesus button,
-.accept-jesus .storybook-celebrate-btn{ 
- background-color: #124201;
+.accept-jesus .storybook-celebrate-btn {
+  background-color: #124201;
   color: #fff;
   padding: 1rem 2rem;
   border-radius: 10px;
@@ -1420,8 +1539,10 @@ form#my-form button:hover {
 
 .accept-jesus button,
 .accept-jesus .storybook-celebrate-btn:hover {
-  transform: scale(1.1); /* Bounce effect */
-  background-color: var(--color-gold); /* Comet’s deep red */
+  transform: scale(1.1);
+  /* Bounce effect */
+  background-color: var(--color-gold);
+  /* Comet’s deep red */
   color: var(--color-accent);
 }
 
@@ -1519,4 +1640,365 @@ form#my-form button:hover {
     0 0 0 9px #ffedbb44;
   transform: scale(1.12) rotate(-8deg);
   text-shadow: 0 2px 16px #FFD70099, 0 0 4px #fff8e1;
+}
+
+/* ================================================= */
+/* ==========  FRIENDS GRID & CARD FLIP STYLES ===== */
+/* ================================================= */
+/* =============================================== */
+/* ==========  FRIENDS GRID & CARD FLIP STYLES ===== */
+/* =============================================== */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-back {
+  background-color: var(--parchment-bg);
+  color: var(--main-brown);
+  font-family: 'Chewy', cursive;
+  font-size: var(--font-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px dashed var(--accent-gold);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: scale(1.05);
+}
+
+/* Fully gray out the coming soon cards */
+/* --- Coming Soon Card Overlay Styles --- */
+.coming-soon .card-front {
+  background-color: #333;
+  color: #fff;
+  opacity: 0.9;
+  filter: grayscale(100%);
+}
+
+.card.coming-soon .card-front::after {
+  content: "COMING SOON";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  font-family: var(--font-accent);
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-back {
+  background-color: var(--parchment-bg);
+  color: var(--main-brown);
+  font-family: 'Chewy', cursive;
+  font-size: var(--font-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px dashed var(--accent-gold);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  transform: rotateY(180deg);
+}
+
+.card:hover .card-back {
+  transform: scale(1.05);
+}
+
+
+/* ================================================= */
+/* ==========  FRIEND CARD FLIP & GRAYSCALE STYLES == */
+/* ================================================= */
+.friend-card {
+  perspective: 1000px;
+}
+
+.friend-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.friend-card:hover .friend-card-inner {
+  transform: rotateY(180deg);
+}
+
+.friend-card-front,
+.friend-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.friend-card-front {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.friend-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.friend-card-back {
+  background-color: var(--parchment-bg);
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Chewy', cursive;
+  font-size: var(--font-md);
+  padding: 1rem;
+  text-align: center;
+}
+
+.friend-card.coming-soon {
+  filter: grayscale(100%);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Card number overlay style */
+.card-number {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-family: 'Chewy', cursive;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+}
+
+/* =======================
+   Responsive Card Grid
+   ======================= */
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    min-height: 200px;
+  }
+
+  .card .back {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 180px;
+  }
+}
+
+
+/* ===== Friends Page: Friend Intro Section ===== */
+.friend-header {
+  font-size: var(--font-xxl);
+  color: var(--orange);
+  font-family: var(--header-font);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+
+.friend-intro {
+  background-color: var(--parchment-bg);
+  padding: 2rem;
+  margin: 0 auto 2rem auto;
+  border-radius: var(--border-radius-lg);
+  max-width: 800px;
+  box-shadow: var(--box-shadow-light);
+}
+
+body,
+html {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.character-card {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: none !important;
+}
+
+.card-inner {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.card-front {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+.card-front img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+
+
+/* ================================================= */
+/* ==========  FRIENDS POEM & MORE ADVENTURES HEADER STYLES ========== */
+/* ================================================= */
+.friends-poem {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  font-family: chewy, cursive;
+  color: var(--text-dark);
+  background-color: var(--parchment-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 4px dashed darkred;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.more-adventures-header {
+  font-size: var(--text-xl);
+  font-family: var(--font-header);
+  text-align: center;
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+  background-color: var(--color-forest);
+}
+
+.chewy orange-text{
+  font-size: 5rem;
+  margin-top: 0.5rem;
+  font-family: chewy, cursive;
+  color: var(--text-dark);
+  background-color: var(--parchment-bg)!important;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 4px dashed darkred !important;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }

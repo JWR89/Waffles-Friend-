@@ -132,3 +132,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+
+    
+
+// Flip character cards on Friends page
+document.addEventListener('DOMContentLoaded', function () {
+  const cards = document.querySelectorAll('.friend-card');
+
+  cards.forEach(card => {
+    if (!card.classList.contains('coming-soon')) {
+      card.addEventListener('click', function () {
+        const innerCard = card.querySelector('.card-inner');
+        if (innerCard) {
+          innerCard.classList.toggle('flipped');
+          console.log('Card flipped:', card);
+        }
+      });
+    }
+  });
+});

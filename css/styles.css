@@ -57,6 +57,14 @@
   /* Subtitles/Accents */
   --font-body: 'Karla', sans-serif;
   /* Body/Paragraphs */
+
+    --font-size-h1: 2.4rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.6rem;
+  --font-size-subheading: 1.4rem;
+  --font-size-p: 1.2rem;
+  --font-size-secondary: 1.1rem;
+  --font-size-callout: 1.3rem;
 }
 
 /* Base body styles */
@@ -1028,9 +1036,9 @@ h2 {
 }
 
 .featured-book .book-summary {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #444;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   font-family: 'Karla', sans-serif;
 }
 
@@ -1112,6 +1120,7 @@ h2 {
 .centered-subheading {
   text-align: center;
   color: #543b29;
+  font-size: 1.8rem;
 }
 .scroll-vine-divider {
   display: block;
@@ -1218,4 +1227,36 @@ h2 {
 
 .latest-story-highlight:hover {
   transform: scale(1.05);
+}
+
+
+/* ===== Custom additions for More Adventures and Storybook Button ===== */
+.centered-heading.more-adventures {
+  color: #f7941d; /* Your signature orange */
+  font-size: 3rem;
+}
+
+.storybook-btn {
+  background-color: var(--color-forest); /* Comet’s deep red */
+  font-family: 'Chewy', cursive;
+  font-size: 2rem;
+  padding: 0.75rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.storybook-btn:hover {
+  transform: scale(1.1); /* Bounce effect */
+  background-color: var(--color-gold); /* Comet’s deep red */
+  color: var(--color-forest);
+}
+/* =============================================== */
+/* ==========  STORY DESCRIPTION STYLE ============ */
+/* =============================================== */
+.story-description {
+  font-size: 1.4rem;
 }

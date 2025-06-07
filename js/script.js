@@ -115,3 +115,20 @@ document.addEventListener("DOMContentLoaded", () => {
   walk(document.body);
 });
 
+    const popup = document.querySelector(".popup-message");
+    const closeButton = document.querySelector(".close-popup");
+
+     document.addEventListener('DOMContentLoaded', function () {
+      const popupModal = document.getElementById('popup-modal');
+      const closeBtn = document.getElementById('close-popup');
+
+      if (popupModal) {
+        popupModal.style.display = 'block';
+
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function () {
+            popupModal.style.display = 'none';
+          });
+        }
+      }
+    });

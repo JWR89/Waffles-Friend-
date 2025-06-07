@@ -1,6 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .resources-announcement-box {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--parchment-bg, #FFF8E1);
+      border: 3px dashed #ba3505;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .resources-announcement-box h2 {
+      font-family: 'Chewy', cursive;
+      font-size: 2.2rem;
+      color: var(--accent-orange, #FF8C00);
+      margin-bottom: 1rem;
+    }
+    .resources-announcement-box p {
+      font-family: 'Karla', sans-serif;
+      font-size: 1.15rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .popup-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .popup-img {
+      max-width: 100%;
+      height: auto;
+      margin: 1rem 0;
+    }
+
+    .close-popup-btn {
+      background-color: #FF8C00;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    .close-popup-btn:hover {
+      background-color: #e37400;
+    }
+  </style>
   <!-- Google Analytics (keep if you want tracking) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SSKFNDCF2"></script>
   <script>
@@ -84,6 +152,11 @@
     </div>
   </div>
 
+  <div class="resources-announcement-box">
+    <h2 class="chewy bright-orange">Free Downloads & Adventures Await!</h2>
+    <p class="karla">Welcome to the Mercy Meadows Resource Library! Coloring pages, journaling prompts, games, and more are all here just for you. Pick your favorite and begin your next adventure today!</p>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-row">
@@ -108,7 +181,32 @@
   </footer>
 
   <!-- Confetti & JS -->
+ 
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <script src="/js/script.js" defer></script>
+
+  <!-- Popup Modal -->
+  <div id="popup-modal" class="popup-modal">
+    <div class="popup-box">
+      <h2>Coming Soon...Just For You!</h2>
+      <p>Hiya friend! You’re right on track— <br>
+But some fun stuff’s not quite back!<br>
+We’re makin’ pages, crafts, and more,<br>
+With giggles, faith, and fun galore!<br>
+<br>
+
+So hold your tail and tap your paws,<br>
+We’re adding games that earn applause!<br>
+With love and care, we’re almost through—<br>
+Surprises coming just for you!<br>
+<br>
+✨ Wanna be the first to know<br>
+When brand-new goodies start to show?<br>
+Just check back soon or subscribe today—<br>
+More Mercy Meadows fun’s on the way! 💌</p><br>
+      <img src="Assets/comingsoon.svg" alt="Coming Soon" class="popup-img"><br>
+      <button id="close-popup" class="close-popup-btn">X</button>
+    </div>
+  </div>
 </body>
 </html>

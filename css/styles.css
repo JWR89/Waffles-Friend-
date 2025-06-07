@@ -1,3 +1,11 @@
+/* =============================================== */
+/* ==========  MORE ADVENTURES HEADER  =========== */
+/* =============================================== */
+.more-adventures-header {
+  color: #f7931e; /* your theme orange */
+  font-size: 2rem; /* slightly smaller */
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
 @font-face {
@@ -306,15 +314,6 @@ nav a:hover {
 /* ================================================= */
 
 /* === SCROLL SECTION SIDE ART === */
-.scroll-section {
-  position: relative;
-  /* <-- add this if not already there */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 2.7rem auto 3.2rem auto;
-  width: 100vw;
-}
 
 .side-art {
   position: absolute;
@@ -397,15 +396,6 @@ nav a:hover {
   right: -19px;
 }
 
-.scroll-title {
-  font-family: 'Funky Coffee', cursive;
-  font-size: 2.5rem;
-  color: #ba3505;
-  margin-bottom: 1.1rem;
-  text-align: center;
-  letter-spacing: 1.5px;
-  text-decoration: underline;
-}
 
 .scroll-poem p {
   font-family: var(--font-body);
@@ -701,6 +691,82 @@ footer {
   text-shadow: 0 2px 16px #FFD70099, 0 0 4px #fff8e1;
 }
 
+.storybook-share-btn {
+  margin: 1.5rem auto 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.93em 2.2em;
+  font-size: 1.18rem;
+  font-family: 'Funky Coffee', cursive;
+  background: linear-gradient(93deg, #FFD700 85%, #FF8C00 100%);
+  color: #4A403A;
+  border: 3px solid #ba3505;
+  border-radius: 32px;
+  box-shadow: 0 2px 9px #FFD70033, 0 2px 7px #ba350522;
+  cursor: pointer;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background 0.15s, color 0.15s, transform 0.13s;
+}
+.storybook-share-btn:hover {
+  background: #FF8C00;
+  color: #fff;
+  transform: scale(1.06) rotate(-3deg);
+  box-shadow: 0 6px 24px #FFD70077;
+}
+
+/* ================================================= */
+/* ==========  A B O U T   P A G E  A R E A  ============= */
+/* ================================================= */
+
+.about-section {
+  background: #FFF8E1;
+  border-radius: 54px 48px 54px 48px / 42px 52px 39px 47px;
+  border: 3px solid #6c3f00;
+  position: relative;
+  z-index: 2;
+  width: 85vw;
+  max-width: 1700px;
+  min-width: 320px;
+  margin: 2.5rem auto 2rem auto;
+  padding: 3rem 2.5rem 3rem 2.5rem;
+  box-shadow: 0 10px 44px 0 rgba(190, 160, 60, 0.13), 0 2px 12px #ba350516;
+  text-align: center;
+}
+
+.scroll-title {
+  font-family: 'Chewy', cursive;
+  font-size: 4rem;
+  color: #ba3505;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  text-decoration: underline;
+}
+.about-intro {
+  color: var(--color-sky);
+  font-size: 1.28rem;
+  line-height: 1.7;
+  font-family: 'Karla', sans-serif;
+}
+
+.about-section p {
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: #4A403A;
+  font-family: var(--font-body);
+  margin-bottom: 1.3rem;
+  text-align: center;
+}
+
+.funfact-text p {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0.4rem 0;
+  color: #4a403a;
+}
+
 /* ================================================= */
 /* ==========  RESPONSIVE DESIGN AREA  ============= */
 /* ================================================= */
@@ -739,3 +805,417 @@ footer {
 /* ================================================= */
 /* ==============  END OF TEMPLATE  ================ */
 /* ================================================= */
+.scroll-subheader {
+  font-family: var(--font-main);
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  color: var(--color-white);
+  margin: 2.5rem 0 1.2rem 0;
+  background: var(--color-forest);
+  padding: 1rem 1.4rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px #ba350524;
+  display: inline-block;
+  border: 2px dashed var(--color-accent);
+}
+
+.custom-bullets {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+}
+
+.custom-bullets li {
+  font-size: 1.4rem;
+  line-height: 1.7;
+  font-family: var(--font-body);
+  color: var(--color-dark-brown);
+  text-align: center;
+}
+
+.custom-bullets li::before {
+  content: '🌿';
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.about-quote {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  line-height: 2;
+  color: var(--color-dark-brown);
+  background: #fff1c7;
+  padding: 1.5rem 2rem;
+  border-left: 6px solid var(--color-gold);
+  border-radius: 16px;
+  margin: 1.8rem auto;
+  width: 90%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================================= */
+/* ==========  BULLET TITLE & DESC STYLES  ========== */
+/* ================================================= */
+.bullet-title {
+  font-weight: bold;
+  font-size: 1.6rem;
+  font-family: var(--font-main);
+  color: var(--color-forest);
+  margin-bottom: 0.4rem;
+  text-decoration: underline;
+}
+
+.bullet-desc {
+  font-size: 1.25rem;
+  font-family: var(--font-body);
+  color: var(--color-dark-brown);
+  line-height: 1.8;
+}
+.scroll-vine-divider {
+  width: 320px;
+  max-width: 90%;
+  height: auto;
+  margin: 2.5rem auto 1.5rem auto;
+  display: block;
+  opacity: 0.85;
+}
+.highlight-jesus {
+  color: #ba3505;
+  font-weight: bold;
+  text-decoration: underline dotted;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.highlight-jesus:hover {
+  color: #ff7426;
+  text-decoration: underline wavy;
+}
+
+/* ================================================= */
+/* ==========  ABOUT JESUS PAGE CUSTOM STYLES  ====== */
+/* ================================================= */
+.jesus-page {
+  font-family: 'Karla', sans-serif;
+  background-color: #fffef9;
+  color: #4d3e2a;
+  padding-bottom: 80px;
+}
+
+.intro-scroll,
+.jesus-love,
+.jesus-story,
+.get-to-know,
+.verse-callout {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.intro-scroll,
+.jesus-love {
+  background-color: #f9f1dd;
+  border: 4px dashed #cc0000;
+  padding: 60px 20px;
+  border-radius: 15px;
+}
+
+.jesus-story,
+.get-to-know {
+  background-color: #fbe8d0; /* muted peach sand */
+  border: 4px dashed #cc0000;
+  padding: 60px 20px;
+  border-radius: 15px;
+}
+
+.verse-callout {
+  background: transparent; /* no background behind verse */
+}
+
+
+/* Consistent parchment background for all sections */
+/* Updated .parchment-background to match "Jesus Loves Waffles" callout style */
+/* Updated .parchment-background for horizontal spacing and max width */
+.parchment-background {
+  background-color: #fdf6e3;
+  border: 2px dashed #e63946;
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 900px;
+}
+/* Section spacing utility */
+.section-spacing {
+  padding: 2rem;
+}
+
+
+.center-text {
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-family: 'Chewy', cursive;
+  color: #af0303;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.big-text {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.big-verse {
+  font-family: 'Funky Coffee', cursive;
+  font-size: 2.2rem;
+  color: #8b4c13;
+  padding: 20px;
+  background: #fff8e1;
+  border: 2px dashed #c29863;
+  border-radius: 12px;
+}
+.intro-scroll p,
+.jesus-love p,
+.jesus-story p,
+.get-to-know p {
+  font-size: 2rem;
+  line-height: 1.75;
+  font-family: 'Chewy', cursive;
+  color: #3d0401; /* warm chocolate brown that pops */
+}
+/* Adventures Hero Section */
+.adventures-hero {
+  background-color: #f4ecd8;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-scroll-art img {
+  width: 80%;
+  max-width: 500px;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Featured Book Section */
+.featured-book {
+  background-color: #fff6e5;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 4px dashed #cc4e5c;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+}
+
+.featured-book .book-title {
+  font-family: 'Chewy', cursive;
+  font-size: 2.5rem;
+  color: #4b3f2f;
+  margin-bottom: 1rem;
+}
+
+.featured-book .book-summary {
+  font-size: 1.8rem;
+  color: #444;
+  margin: 1.5rem 0;
+  font-family: 'Karla', sans-serif;
+}
+
+/* Amazon Badge Icon */
+.featured-book a img {
+  transition: transform 0.3s ease;
+}
+
+.featured-book a img:hover {
+  transform: scale(1.05);
+}
+
+/* Books Grid Section */
+.books-grid {
+  padding: 4rem 2rem;
+  background-color: #fcf5dd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.book-card {
+  background-color: #fffbe9;
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.book-card h3 {
+  font-family: 'Chewy', cursive;
+  font-size: 1.6rem;
+  color: #3a3023;
+}
+
+.book-card p {
+  font-size: 1.3rem;
+  color: #555;
+}
+
+/* CTA Section */
+.cta-banner {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #fcecd4;
+}
+
+.storybook-btn {
+  background-color: #cc4e5c;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Funky Coffee', cursive;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.storybook-btn:hover {
+  background-color: #b63f4d;
+}
+
+/* Centered Headings */
+.centered-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  color: #FF8C00; /* Project orange theme color */
+}
+.centered-subheading {
+  text-align: center;
+  color: #543b29;
+}
+.scroll-vine-divider {
+  display: block;
+  margin: 2rem auto;
+  max-width: 350px;
+  height: auto;
+}
+
+.section-spacing {
+  padding: 4rem 2rem;
+}
+
+.parchment-background {
+  background-color: #fef9ec;
+  border: 2px dashed #d87d4a;
+  border-radius: 12px;
+}
+
+.book-card img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.featured-book h2,
+.featured-book p {
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+}
+
+.featured-book .order-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ffce63;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  font-family: 'Chewy', cursive;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.featured-book .order-button:hover {
+  background-color: #ffc441;
+}
+
+.featured-book .order-button img {
+  height: 24px;
+  width: auto;
+}
+.carousel-section {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem;
+  scroll-behavior: smooth;
+}
+
+.carousel-section::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-section::-webkit-scrollbar-thumb {
+  background: #d87d4a;
+  border-radius: 4px;
+}
+
+.book-card {
+  flex: 0 0 auto;
+  width: 200px;
+}
+/* Center and style "What Makes These Adventures So Special" section */
+.why-these-books h2 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-family: 'Chewy', cursive;
+}
+
+/* Center h3 headings in "Why These Books Matter" section */
+.why-these-books h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: 'Karla', sans-serif;
+}
+/* =============================================== */
+/* ==========  LATEST STORY HIGHLIGHT  =========== */
+/* =============================================== */
+.latest-story-highlight {
+  background-color: #b22222; /* Comet's deep red */
+  border: 2px solid #ffd700; /* gold border */
+  color: white;
+  font-family: 'Chewy', cursive; /* more readable and on-brand */
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.latest-story-highlight:hover {
+  transform: scale(1.05);
+}

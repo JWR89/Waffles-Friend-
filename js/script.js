@@ -47,7 +47,6 @@ fish.addEventListener('click', function() {
   fishBanner.style.display = 'flex';
   launchConfetti();
 });
-
 bannerClose.addEventListener('click', function() {
   fishBanner.style.display = 'none';
 });
@@ -67,3 +66,51 @@ function launchConfetti() {
     scalar: 1.2,
   });
 }
+
+document.getElementById('share-fish-btn').addEventListener('click', function() {
+  const shareUrl = 'https://waffles-and-friends.com';
+  const shareImage = encodeURIComponent('https://waffles-and-friends.com/assets/treasure-map.png'); // Use your real image URL
+  const shareText = encodeURIComponent("I found the hidden Jesus fish at waffles-and-friends.com! Can you find it?");
+  // Facebook share dialog
+  window.open(
+    `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${shareText}`,
+    '_blank'
+  );
+});
+
+document.getElementById('copy-fish-share').addEventListener('click', function() {
+  navigator.clipboard.writeText(
+    "I found the hidden Jesus fish at https://waffles-and-friends.com! Can you find it?"
+  ).then(() => {
+    alert('Copied! Paste and share on TikTok, Facebook, or anywhere you want!');
+  });
+});
+
+// Automatically highlight and link the word "Jesus" throughout the page content
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("about-jesus.html")) return;
+
+  const targetText = "Jesus";
+  const replacementHTML = `<a href="/about-jesus.html" class="highlight-jesus">Jesus</a>`;
+
+  const walk = (node) => {
+    if (node.nodeType === 3) { // Text node
+      const text = node.nodeValue;
+      const idx = text.indexOf(targetText);
+      if (idx > -1) {
+        const span = document.createElement("span");
+        span.innerHTML = text.replace(
+          new RegExp(`\\b${targetText}\\b`, "g"),
+          replacementHTML
+        );
+        node.parentNode.replaceChild(span, node);
+      }
+    } else if (node.nodeType === 1 && node.childNodes && !["SCRIPT", "STYLE", "A"].includes(node.tagName)) {
+      for (let i = 0; i < node.childNodes.length; i++) {
+        walk(node.childNodes[i]);
+      }
+    }
+  };
+
+  walk(document.body);
+});

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (keep if you want tracking) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9SSKFNDCF2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9SSKFNDCF2');
+  </script>
+
+  <meta name="p:domain_verify" content="b2ef84a60a4be38138cf48458371ffd1"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:image" content="https://waffles-and-friends.com/Assets/map.svg" />
+  <title>About Us | Waffles & Friends</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div id="mercy-meadows-animation">
+      <img id="welcome-logo" class="welcome-media" src="/Assets/OpeningImage.png" alt="welcome-logo" style="display: block;" />
+    </div>
+  </section>
+
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/books.html">Adventures</a></li>
+      <li><a href="/characters.html">Friends</a></li>
+      <li><a href="/resources.html">Resources</a></li>
+      <li><a href="https://waffleandfriends.gumroad.com" target="_blank">Shop</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Adventures Hero Section -->
+  <section class="adventures-hero parchment-background">
+    <h1 class="centered-heading">Adventures in Mercy Meadows!</h1>
+    <h2 class="centered-subheading">Every story is filled with faith, fun, and timeless truth.</h2>
+  </section>
+
+  <!-- Featured Book Section -->
+  <section class="featured-book section-spacing">
+    <h2 class="book-title">Jesus Loves Waffles</h2>
+    <img src="/Assets/jesus-loves-waffles-cover.png" alt="Jesus Loves Waffles Cover" class="book-cover" />
+    <p class="book-summary">In this heartwarming adventure, Waffles wonders if Jesus could really love a little creature like her. But through a gentle journey across Mercy Meadows—and a few wise words from her friends—Waffles discovers the beautiful, unshakable truth: Jesus’ love is for everyone… even her!</p>
+    <a href="https://www.amazon.com/dp/your-book-id" target="_blank" title="Order on Amazon">
+      <img src="Assets/amazonlogo.svg" alt="Order on Amazon" style="width: 200px; height: 200px; margin: 1rem auto; display: block;">
+    </a>
+  </section>
+  
+  <!-- Carousel Section -->
+  <section class="parchment-background section-spacing">
+    <h2 class="centered-heading more-adventures">More Adventures Await!</h2>
+    <div class="book-carousel">
+      <p class="centered-subheading">More stories are on the way! Stay tuned for upcoming adventures!</p>
+    </div>
+
+  <!-- All Adventures Section -->
+  <section class="books-grid parchment-background section-spacing">
+    <div class="book-card">
+      <img src="/Assets/placeholder-book-cover.png" alt="Book Cover Coming Soon" />
+      <h3>Grace’s Gentle Heart</h3>
+      <p>Grace shares the love of Jesus with a friend who feels left out.</p>
+    </div>
+    <div class="book-card">
+      <img src="/Assets/placeholder-book-cover.png" alt="Book Cover Coming Soon" />
+      <h3>Mr. Ribbit’s Big Lesson</h3>
+      <p>Wisdom takes center stage when the pond gets chaotic!</p>
+    </div>
+    <div class="book-card">
+      <img src="/Assets/placeholder-book-cover.png" alt="Book Cover Coming Soon" />
+      <h3>Comet’s Courageous Race</h3>
+      <p>Comet learns how faith fuels every step—even the fast ones!</p>
+    </div>
+  </section>
+  </section>
+
+  <!-- Why These Books Matter -->
+  <section class="why-these-books parchment-background section-spacing">
+    <div class="scroll-box">
+      <h2 class="centered-heading">What Makes These Adventures So Special?</h2>
+      <h3>Faith-filled lessons</h3>
+      <h3>Whimsical characters</h3>
+      <h3>Gentle truth for little hearts</h3>
+      <h3>Beautiful art & joyful storytelling</h3>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta-banner parchment-background section-spacing">
+    <h2 class="centered-subheading">More adventures are always being written...</h2>
+    <a href="#" class="storybook-btn">Get the Latest Story!</a>
+  </section>
+
+  <!-- Hidden Jesus Fish (Fun Hunt!) -->
+  <img 
+    src="/Assets/JesusFish.svg" 
+    alt="Hidden Jesus Fish" 
+    class="hidden-fish" 
+    id="hiddenFish"
+    style="position: absolute; cursor: pointer; z-index: 4000;"
+  />
+
+  <!-- Pop-Up Banner for Hidden Fish -->
+  <div id="fish-banner" class="storybook-banner">
+    <div class="banner-inner">
+      <span id="banner-close" class="banner-close" title="Close">&times;</span>
+        <div class="banner-visual">
+        <img src="/Assets/Map.svg" alt="Magnified Map Section" class="banner-map-illustration" />
+      </div>
+      <div class="banner-header">You found the hidden Jesus Fish!</div>
+      <div class="banner-text">
+        <span class="banner-verse">“Seek and you will find...”<br><em>(Matthew 7:7)</em></span>
+        <br>
+        <span class="banner-fun">You’re a true Mercy Meadows Explorer!<br>
+        <span style="color:#ba3505;">Come back soon for a new surprise!</span></span>
+      </div>
+    <button id="share-fish-btn" class="storybook-share-btn">
+    <img src="/Assets/Map.svg" alt="Treasure Map" style="width:32px; height:32px; margin-right:0.6em; vertical-align:middle;">
+    Share: I Found the Hidden Jesus Fish!
+    </button>
+    <button id="copy-fish-share" class="storybook-share-btn" style="margin-top:0.7em; background: #FFD700;">
+      Copy & Share Anywhere!
+    </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-row">
+      <div class="footer-text">
+        <span class="footer-tagline-accent-one">Let’s Stay Friends!!</span>
+      </div>
+      <div style="margin: 1rem 0;">
+        <a href="/subscribe.html" class="footer-subscribe-link">Subscribe for updates</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@elias.waffles.friends" target="_blank" class="footer-icon" title="TikTok">
+          <img src="/Assets/tiktok-icon.png" alt="TikTok" />
+        </a>
+        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61568196914471" target="_blank" class="footer-icon" title="Facebook">
+          <img src="/Assets/facebook-icon.png" alt="Facebook" />
+        </a>
+      </div>
+      <div class="footer-text">
+        <span>© 2025 Waffles & Friends. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Confetti & JS -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="/js/script.js" defer></script>
+</body>
+</html>

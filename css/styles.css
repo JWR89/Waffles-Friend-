@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
-@font-face {
-  font-family: 'Funky Coffee';
-  src: url('/fonts/Funky Coffee.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 /* ================================================= */
 /* ==========  WAFFLES & FRIENDS CSS  ============== */
@@ -41,7 +36,7 @@
 
   /* Font Family */
   --font-main: 'Chewy', cursive, sans-serif;
-  --font-accent: 'Funky Coffee', cursive, sans-serif;
+  --font-accent: 'Patrick Hand', cursive;
 
   --font-size-h1: 2.8rem;
   --font-size-h2: 2rem;
@@ -622,7 +617,7 @@ footer {
 }
 
 .footer-tagline {
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   color: #ba3505;
   font-size: 1.9rem;
   letter-spacing: 1px;
@@ -637,7 +632,7 @@ footer {
 
 .footer-tagline-accent-two {
   color: #146802;
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   font-size: 3rem;
   letter-spacing: 1px;
 }
@@ -674,15 +669,14 @@ footer {
 }
 
 .storybook-banner {
-  display: none;
+  display: flex;
   position: fixed;
-  z-index: 9002;
+  z-index: 10000;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background: rgba(184, 230, 255, 0.33);
-  /* Soft blue overlay */
   justify-content: center;
   align-items: center;
   animation: fadeInPopup 0.3s;
@@ -709,7 +703,7 @@ footer {
     0 2px 16px #87ceeb55;
   border: 5px solid #FFD700;
   position: relative;
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   text-align: center;
   overflow: visible;
 }
@@ -730,7 +724,7 @@ footer {
 }
 
 .banner-verse {
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   font-size: 2rem;
   color: #317902;
   display: block;
@@ -746,9 +740,7 @@ footer {
 .banner-close {
   position: absolute;
   top: -28px;
-  /* Move higher outside the content area */
   right: -18px;
-  /* Move more right outside the content area */
   font-size: 2.7rem;
   color: #FFD700;
   background: linear-gradient(145deg, #ba3505 60%, #ff8c00 100%);
@@ -769,12 +761,12 @@ footer {
     box-shadow 0.17s,
     transform 0.17s;
   z-index: 11000;
-  /* Keep on top */
   line-height: 1.0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-shadow: 1px 3px 5px #4a403a66, 0 0 4px #fff8e199;
+  pointer-events: auto;
 }
 
 .banner-map-illustration {
@@ -806,7 +798,7 @@ footer {
   align-items: center;
   padding: 0.93em 2.2em;
   font-size: 1.18rem;
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   background: linear-gradient(93deg, #FFD700 85%, #FF8C00 100%);
   color: #4A403A;
   border: 3px solid #ba3505;
@@ -1093,7 +1085,7 @@ h2 {
 }
 
 .big-verse {
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   font-size: 2.2rem;
   color: #8b4c13;
   padding: 20px;
@@ -1213,7 +1205,7 @@ h2 {
   font-size: 1.5rem;
   display: inline-block;
   text-decoration: none;
-  font-family: 'Funky Coffee', cursive;
+  font-family: var(--font-accent);
   margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
@@ -2053,4 +2045,53 @@ html {
   background-color: #FF8C00;
   color: #fff;
   transform: scale(1.05);
+}
+/* ================================================= */
+/* ==========  NAVIGATION BAR MOBILE STYLES  ======= */
+/* ================================================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  nav li {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav a {
+    width: 80%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(to right, #FFD700, #FF8C00);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 0.3rem auto;
+  }
+}
+@media (max-width: 768px) {
+  .card-grid,
+  .friends-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .card,
+  .friend-card {
+    min-width: 140px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-grid,
+  .friends-grid {
+    grid-template-columns: 1fr;
+  }
 }

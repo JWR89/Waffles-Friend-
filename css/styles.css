@@ -2002,3 +2002,55 @@ html {
   margin-right: auto;
   text-align: center;
 }
+/* =======================
+   Coming Soon Overlay (Adventures Page)
+   ======================= */
+   
+#coming-soon-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.87);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Chewy', cursive;
+}
+
+#coming-soon-overlay h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1.2rem;
+  color: #FFD700;
+  text-shadow: 0 0 6px #FF8C00, 0 0 12px #FFD700;
+}
+
+#coming-soon-overlay p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-family: 'Karla', sans-serif;
+}
+
+#coming-soon-overlay a {
+  padding: 1rem 2rem;
+  font-size: 1.3rem;
+  background-color: #FFD700;
+  color: #4A403A;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+#coming-soon-overlay a:hover {
+  background-color: #FF8C00;
+  color: #fff;
+  transform: scale(1.05);
+}

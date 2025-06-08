@@ -669,9 +669,10 @@ footer {
 }
 
 .storybook-banner {
-  display: flex;
+  /* display: flex;  <-- REMOVE DEFAULT VISIBLE ON PAGE LOAD */
+  display: none; /* Hide by default, only show on user interaction */
   position: fixed;
-  z-index: 10000;
+  z-index: 9000;
   left: 0;
   top: 0;
   right: 0;
@@ -760,7 +761,7 @@ footer {
     background 0.18s,
     box-shadow 0.17s,
     transform 0.17s;
-  z-index: 11000;
+  z-index: 10001;
   line-height: 1.0;
   display: flex;
   align-items: center;

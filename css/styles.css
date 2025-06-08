@@ -364,6 +364,7 @@ nav a:hover {
   position: relative;
 }
 
+/* The default .scroll-paper styles are for desktop/tablet. Mobile will override below. */
 .scroll-paper {
   width: 60vw;
   /* Fill almost the whole viewport */
@@ -2111,6 +2112,25 @@ html {
   .friends-grid {
     grid-template-columns: 1fr;
     justify-content: center;
+  }
+
+  .scroll-paper {
+    width: 99% !important;
+    padding: 1rem;
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+
+  .mobile-wide-poem {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  .poem-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 1rem;
+    text-align: center;
   }
 }
 /* ================================================= */

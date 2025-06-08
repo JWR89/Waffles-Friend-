@@ -115,23 +115,27 @@ document.addEventListener("DOMContentLoaded", () => {
   walk(document.body);
 });
 
-    const popup = document.querySelector(".popup-message");
-    const closeButton = document.querySelector(".close-popup");
+document.addEventListener('DOMContentLoaded', function () {
+  const popupModal = document.getElementById('popup-modal');
+  const closeBtn = document.getElementById('close-popup');
+  const hiddenFish = document.getElementById('hiddenFish');
 
-     document.addEventListener('DOMContentLoaded', function () {
-      const popupModal = document.getElementById('popup-modal');
-      const closeBtn = document.getElementById('close-popup');
+  if (popupModal) popupModal.style.display = 'none';
 
-      if (popupModal && closeBtn) {
-        closeBtn.addEventListener('click', function () {
-          popupModal.style.display = 'none';
-        });
-        // Optional: Prevent auto-opening on page load unless triggered
-        popupModal.style.display = 'none';
-      }
+  // Jesus Fish popup temporarily disabled
+  // if (hiddenFish && popupModal) {
+  //   hiddenFish.addEventListener('click', function () {
+  //     popupModal.style.display = 'flex';
+  //     launchConfetti();
+  //   });
+  // }
+
+  if (closeBtn && popupModal) {
+    closeBtn.addEventListener('click', function () {
+      popupModal.style.display = 'none';
     });
-
-    
+  }
+});
 
 // Flip character cards on Friends page
 document.addEventListener('DOMContentLoaded', function () {

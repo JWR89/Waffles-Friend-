@@ -55,17 +55,17 @@ fishBanner.addEventListener('click', function(e) {
   if (e.target === fishBanner) fishBanner.style.display = 'none';
 });
 
-function launchConfetti() {
-  confetti({
-    particleCount: 180,
-    spread: 80,
-    origin: { y: 0.45 },
-    colors: ['#FFD700', '#FF8C00', '#39C5E0', '#A5D17A', '#FF69B4', '#ffffff'],
-    shapes: ['circle', 'square'],
-    gravity: 0.7,
-    scalar: 1.2,
-  });
-}
+// function launchConfetti() {
+//   confetti({
+//     particleCount: 180,
+//     spread: 80,
+//     origin: { y: 0.45 },
+//     colors: ['#FFD700', '#FF8C00', '#39C5E0', '#A5D17A', '#FF69B4', '#ffffff'],
+//     shapes: ['circle', 'square'],
+//     gravity: 0.7,
+//     scalar: 1.2,
+//   });
+// }
 
 document.getElementById('share-fish-btn').addEventListener('click', function() {
   const shareUrl = 'https://waffles-and-friends.com';
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeBtn = document.getElementById('close-popup');
   const hiddenFish = document.getElementById('hiddenFish');
 
-  if (popupModal) popupModal.style.display = 'none';
+  // if (popupModal) popupModal.style.display = 'none';
 
   // Jesus Fish popup temporarily disabled
   // if (hiddenFish && popupModal) {
@@ -130,11 +130,11 @@ document.addEventListener('DOMContentLoaded', function () {
   //   });
   // }
 
-  if (closeBtn && popupModal) {
-    closeBtn.addEventListener('click', function () {
-      popupModal.style.display = 'none';
-    });
-  }
+  // if (closeBtn && popupModal) {
+  //   closeBtn.addEventListener('click', function () {
+  //     popupModal.style.display = 'none';
+  //   });
+  // }
 });
 
 // Flip character cards on Friends page

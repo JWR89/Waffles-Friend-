@@ -120,7 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const closeBtn = document.getElementById('close-popup');
   const hiddenFish = document.getElementById('hiddenFish');
 
-  if (popupModal) popupModal.style.display = 'none';
+  const isDisabledPage = ['index.html', 'adventures.html', 'resources.html'].some(path =>
+    window.location.pathname.includes(path)
+  );
+
+  if (popupModal && !isDisabledPage) popupModal.style.display = 'none';
 
   // Jesus Fish popup temporarily disabled
   // if (hiddenFish && popupModal) {

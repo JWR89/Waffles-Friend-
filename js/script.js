@@ -122,14 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const popupModal = document.getElementById('popup-modal');
       const closeBtn = document.getElementById('close-popup');
 
-      if (popupModal) {
-        popupModal.style.display = 'block';
-
-        if (closeBtn) {
-          closeBtn.addEventListener('click', function () {
-            popupModal.style.display = 'none';
-          });
-        }
+      if (popupModal && closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          popupModal.style.display = 'none';
+        });
+        // Optional: Prevent auto-opening on page load unless triggered
+        popupModal.style.display = 'none';
       }
     });
 
